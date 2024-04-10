@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище BdPractica5Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Checkk">
+    <Key>
+      <PropertyRef Name="ID_Checkk" />
+    </Key>
+    <Property Name="ID_Checkk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_of_purchase" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="Summ_Check" Type="int" Nullable="false" />
+    <Property Name="Vneseno" Type="int" Nullable="false" />
+    <Property Name="Sdacha" Type="int" />
+    <Property Name="EMP_ID" Type="int" Nullable="false" />
+    <Property Name="Client_ID" Type="int" Nullable="false" />
+    <Property Name="Korzina_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID_Client" />
+    </Key>
+    <Property Name="ID_Client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumberPhone" Type="nvarchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="DanVxod">
+    <Key>
+      <PropertyRef Name="ID_DanVxod" />
+    </Key>
+    <Property Name="ID_DanVxod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Loggin" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Passwd" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Rol_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dolz">
+    <Key>
+      <PropertyRef Name="ID_Dolz" />
+    </Key>
+    <Property Name="ID_Dolz" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dolzn" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMP">
+    <Key>
+      <PropertyRef Name="ID_EMP" />
+    </Key>
+    <Property Name="ID_EMP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SURNAME" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="MIDDLENAME" Type="nvarchar" MaxLength="80" />
+    <Property Name="DanVxod_ID" Type="int" />
+    <Property Name="Smena_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="EMPDolz">
+    <Key>
+      <PropertyRef Name="ID_EMPDolz" />
+    </Key>
+    <Property Name="ID_EMPDolz" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMP_ID" Type="int" Nullable="false" />
+    <Property Name="Dolz_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Korzina">
+    <Key>
+      <PropertyRef Name="ID_Korzina" />
+    </Key>
+    <Property Name="ID_Korzina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tovar_ID" Type="int" Nullable="false" />
+    <Property Name="KolichestvoVKorzine" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="ID_Rol" />
+    </Key>
+    <Property Name="ID_Rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Roll" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Smena">
+    <Key>
+      <PropertyRef Name="ID_Smena" />
+    </Key>
+    <Property Name="ID_Smena" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Smens" Type="int" Nullable="false" />
+    <Property Name="Hourr" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tovar">
+    <Key>
+      <PropertyRef Name="ID_Tovar" />
+    </Key>
+    <Property Name="ID_Tovar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameTovar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Kolichestvo" Type="int" />
+  </EntityType>
+  <Association Name="FK__Checkk__Client_I__5535A963">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Checkk" Type="Self.Checkk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID_Client" />
+      </Principal>
+      <Dependent Role="Checkk">
+        <PropertyRef Name="Client_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Checkk__EMP_ID__5441852A">
+    <End Role="EMP" Type="Self.EMP" Multiplicity="1" />
+    <End Role="Checkk" Type="Self.Checkk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMP">
+        <PropertyRef Name="ID_EMP" />
+      </Principal>
+      <Dependent Role="Checkk">
+        <PropertyRef Name="EMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Checkk__Korzina___5629CD9C">
+    <End Role="Korzina" Type="Self.Korzina" Multiplicity="1" />
+    <End Role="Checkk" Type="Self.Checkk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korzina">
+        <PropertyRef Name="ID_Korzina" />
+      </Principal>
+      <Dependent Role="Checkk">
+        <PropertyRef Name="Korzina_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DanVxod__Rol_ID__3B75D760">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="DanVxod" Type="Self.DanVxod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="ID_Rol" />
+      </Principal>
+      <Dependent Role="DanVxod">
+        <PropertyRef Name="Rol_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EMP__DanVxod_ID__44FF419A">
+    <End Role="DanVxod" Type="Self.DanVxod" Multiplicity="0..1" />
+    <End Role="EMP" Type="Self.EMP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanVxod">
+        <PropertyRef Name="ID_DanVxod" />
+      </Principal>
+      <Dependent Role="EMP">
+        <PropertyRef Name="DanVxod_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EMP__Smena_ID__45F365D3">
+    <End Role="Smena" Type="Self.Smena" Multiplicity="0..1" />
+    <End Role="EMP" Type="Self.EMP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Smena">
+        <PropertyRef Name="ID_Smena" />
+      </Principal>
+      <Dependent Role="EMP">
+        <PropertyRef Name="Smena_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EMPDolz__Dolz_ID__49C3F6B7">
+    <End Role="Dolz" Type="Self.Dolz" Multiplicity="1" />
+    <End Role="EMPDolz" Type="Self.EMPDolz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dolz">
+        <PropertyRef Name="ID_Dolz" />
+      </Principal>
+      <Dependent Role="EMPDolz">
+        <PropertyRef Name="Dolz_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EMPDolz__EMP_ID__48CFD27E">
+    <End Role="EMP" Type="Self.EMP" Multiplicity="1" />
+    <End Role="EMPDolz" Type="Self.EMPDolz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMP">
+        <PropertyRef Name="ID_EMP" />
+      </Principal>
+      <Dependent Role="EMPDolz">
+        <PropertyRef Name="EMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Korzina__Koliche__5165187F">
+    <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
+    <End Role="Korzina" Type="Self.Korzina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tovar">
+        <PropertyRef Name="ID_Tovar" />
+      </Principal>
+      <Dependent Role="Korzina">
+        <PropertyRef Name="Tovar_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище BdPractica5ModelContainer">
+    <EntitySet Name="Checkk" EntityType="Self.Checkk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanVxod" EntityType="Self.DanVxod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dolz" EntityType="Self.Dolz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMP" EntityType="Self.EMP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPDolz" EntityType="Self.EMPDolz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Korzina" EntityType="Self.Korzina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Smena" EntityType="Self.Smena" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tovar" EntityType="Self.Tovar" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Checkk__Client_I__5535A963" Association="Self.FK__Checkk__Client_I__5535A963">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Checkk" EntitySet="Checkk" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Checkk__EMP_ID__5441852A" Association="Self.FK__Checkk__EMP_ID__5441852A">
+      <End Role="EMP" EntitySet="EMP" />
+      <End Role="Checkk" EntitySet="Checkk" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Checkk__Korzina___5629CD9C" Association="Self.FK__Checkk__Korzina___5629CD9C">
+      <End Role="Korzina" EntitySet="Korzina" />
+      <End Role="Checkk" EntitySet="Checkk" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DanVxod__Rol_ID__3B75D760" Association="Self.FK__DanVxod__Rol_ID__3B75D760">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="DanVxod" EntitySet="DanVxod" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EMP__DanVxod_ID__44FF419A" Association="Self.FK__EMP__DanVxod_ID__44FF419A">
+      <End Role="DanVxod" EntitySet="DanVxod" />
+      <End Role="EMP" EntitySet="EMP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EMP__Smena_ID__45F365D3" Association="Self.FK__EMP__Smena_ID__45F365D3">
+      <End Role="Smena" EntitySet="Smena" />
+      <End Role="EMP" EntitySet="EMP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EMPDolz__Dolz_ID__49C3F6B7" Association="Self.FK__EMPDolz__Dolz_ID__49C3F6B7">
+      <End Role="Dolz" EntitySet="Dolz" />
+      <End Role="EMPDolz" EntitySet="EMPDolz" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EMPDolz__EMP_ID__48CFD27E" Association="Self.FK__EMPDolz__EMP_ID__48CFD27E">
+      <End Role="EMP" EntitySet="EMP" />
+      <End Role="EMPDolz" EntitySet="EMPDolz" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Korzina__Koliche__5165187F" Association="Self.FK__Korzina__Koliche__5165187F">
+      <End Role="Tovar" EntitySet="Tovar" />
+      <End Role="Korzina" EntitySet="Korzina" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

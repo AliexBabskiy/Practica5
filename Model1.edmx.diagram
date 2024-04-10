@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ba09812e0014a9b819647327d766e55" Name="Diagram1">
+        <EntityTypeShape EntityType="BdPractica5Model.Checkk" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdPractica5Model.Client" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdPractica5Model.DanVxod" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdPractica5Model.Dolz" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdPractica5Model.EMP" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdPractica5Model.EMPDolz" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdPractica5Model.Korzina" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdPractica5Model.Rol" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdPractica5Model.Smena" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdPractica5Model.Tovar" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="BdPractica5Model.FK__Checkk__Client_I__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="BdPractica5Model.FK__Checkk__EMP_ID__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="BdPractica5Model.FK__Checkk__Korzina___5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="BdPractica5Model.FK__DanVxod__Rol_ID__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="BdPractica5Model.FK__EMP__DanVxod_ID__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="BdPractica5Model.FK__EMPDolz__Dolz_ID__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="BdPractica5Model.FK__EMP__Smena_ID__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="BdPractica5Model.FK__EMPDolz__EMP_ID__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="BdPractica5Model.FK__Korzina__Koliche__5165187F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

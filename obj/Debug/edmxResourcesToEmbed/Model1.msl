@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище BdPractica5ModelContainer" CdmEntityContainer="BdPractica5Entities">
+    <EntitySetMapping Name="Checkk">
+      <EntityTypeMapping TypeName="BdPractica5Model.Checkk">
+        <MappingFragment StoreEntitySet="Checkk">
+          <ScalarProperty Name="ID_Checkk" ColumnName="ID_Checkk" />
+          <ScalarProperty Name="Date_of_purchase" ColumnName="Date_of_purchase" />
+          <ScalarProperty Name="Summ_Check" ColumnName="Summ_Check" />
+          <ScalarProperty Name="Vneseno" ColumnName="Vneseno" />
+          <ScalarProperty Name="Sdacha" ColumnName="Sdacha" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+          <ScalarProperty Name="Korzina_ID" ColumnName="Korzina_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="BdPractica5Model.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ID_Client" ColumnName="ID_Client" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="NumberPhone" ColumnName="NumberPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanVxod">
+      <EntityTypeMapping TypeName="BdPractica5Model.DanVxod">
+        <MappingFragment StoreEntitySet="DanVxod">
+          <ScalarProperty Name="ID_DanVxod" ColumnName="ID_DanVxod" />
+          <ScalarProperty Name="Loggin" ColumnName="Loggin" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="Rol_ID" ColumnName="Rol_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dolz">
+      <EntityTypeMapping TypeName="BdPractica5Model.Dolz">
+        <MappingFragment StoreEntitySet="Dolz">
+          <ScalarProperty Name="ID_Dolz" ColumnName="ID_Dolz" />
+          <ScalarProperty Name="Dolzn" ColumnName="Dolzn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMP">
+      <EntityTypeMapping TypeName="BdPractica5Model.EMP">
+        <MappingFragment StoreEntitySet="EMP">
+          <ScalarProperty Name="ID_EMP" ColumnName="ID_EMP" />
+          <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="MIDDLENAME" ColumnName="MIDDLENAME" />
+          <ScalarProperty Name="DanVxod_ID" ColumnName="DanVxod_ID" />
+          <ScalarProperty Name="Smena_ID" ColumnName="Smena_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPDolz">
+      <EntityTypeMapping TypeName="BdPractica5Model.EMPDolz">
+        <MappingFragment StoreEntitySet="EMPDolz">
+          <ScalarProperty Name="ID_EMPDolz" ColumnName="ID_EMPDolz" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="Dolz_ID" ColumnName="Dolz_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korzina">
+      <EntityTypeMapping TypeName="BdPractica5Model.Korzina">
+        <MappingFragment StoreEntitySet="Korzina">
+          <ScalarProperty Name="ID_Korzina" ColumnName="ID_Korzina" />
+          <ScalarProperty Name="Tovar_ID" ColumnName="Tovar_ID" />
+          <ScalarProperty Name="KolichestvoVKorzine" ColumnName="KolichestvoVKorzine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="BdPractica5Model.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
+          <ScalarProperty Name="Roll" ColumnName="Roll" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Smena">
+      <EntityTypeMapping TypeName="BdPractica5Model.Smena">
+        <MappingFragment StoreEntitySet="Smena">
+          <ScalarProperty Name="ID_Smena" ColumnName="ID_Smena" />
+          <ScalarProperty Name="Smens" ColumnName="Smens" />
+          <ScalarProperty Name="Hourr" ColumnName="Hourr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tovar">
+      <EntityTypeMapping TypeName="BdPractica5Model.Tovar">
+        <MappingFragment StoreEntitySet="Tovar">
+          <ScalarProperty Name="ID_Tovar" ColumnName="ID_Tovar" />
+          <ScalarProperty Name="NameTovar" ColumnName="NameTovar" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Kolichestvo" ColumnName="Kolichestvo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
