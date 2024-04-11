@@ -5,7 +5,7 @@
       <PropertyRef Name="ID_Checkk" />
     </Key>
     <Property Name="ID_Checkk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Date_of_purchase" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="Date_of_purchase" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="Summ_Check" Type="int" Nullable="false" />
     <Property Name="Vneseno" Type="int" Nullable="false" />
     <Property Name="Sdacha" Type="int" />
@@ -19,7 +19,7 @@
     </Key>
     <Property Name="ID_Client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ClientName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="NumberPhone" Type="nvarchar" MaxLength="12" />
+    <Property Name="NumberPhone" Type="nvarchar" MaxLength="11" />
   </EntityType>
   <EntityType Name="DanVxod">
     <Key>

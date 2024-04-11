@@ -14,13 +14,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Button x:Name="BtCheckk" Content="Чек" Click="Checkk_Cl"/>
         <Button x:Name="BtCheckk_Histori" Content="История Чеков" Grid.Column="1" Click="Checkk_Histori_Cl"/>
-        <Button x:Name="BtClient" Content="Клиент" Grid.Column="2" Click="Client_Click"/>
 
-        <Frame x:Name="FrameP" Grid.Row="1" Grid.ColumnSpan="6" NavigationUIVisibility="Hidden" Grid.RowSpan="5"/>
+        <Frame x:Name="FrameP" Grid.Row="1" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

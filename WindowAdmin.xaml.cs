@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,7 @@ namespace PePract5
     /// </summary>
     public partial class WindowAdmin : Window
     {
+        private BdPractica5Entities context = new BdPractica5Entities();
         public WindowAdmin()
         {
             InitializeComponent();
@@ -52,6 +55,27 @@ namespace PePract5
         private void Smena(object sender, RoutedEventArgs e)
         {
             FrameP.Content = new AdminPageSmena();
+        }
+
+        private void Becap_Cl(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                using (SqlConnection v = new SqlConnection(context.Database.Connection.ConnectionString))
+                {
+                    v.Open();
+                    using (SqlCommand j = new SqlCommand("dbo.BdPractica5", v))
+                    {
+                        j.CommandType = CommandType.StoredProcedure;
+                        j.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Бекап сделан");
+            }
+            catch
+            {
+                MessageBox.Show("НЕ удалось сделать бекап обратитесь к сис. админу");
+            }
         }
     }
 }

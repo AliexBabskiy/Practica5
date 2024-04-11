@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
@@ -37,7 +38,7 @@ namespace PePract5
                 Eror.Text = "Невозможно добавить корзину: \nНеверное количество";
                 return;
             }
-            else
+            else if (Information.IsNumeric(text1.Text))
             {
                 o.KolichestvoVKorzine = Convert.ToInt32(text1.Text);
             }
@@ -70,7 +71,7 @@ namespace PePract5
                     Eror.Text = "Невозможно изменить корзину: \nНеверное количество";
                     return;
                 }
-                else
+                else if (Information.IsNumeric(text1.Text))
                 {
                     selected.KolichestvoVKorzine = Convert.ToInt32(text1.Text);
                 }

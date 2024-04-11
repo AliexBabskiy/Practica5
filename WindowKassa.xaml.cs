@@ -22,21 +22,17 @@ namespace PePract5
         public WindowKassa()
         {
             InitializeComponent();
+            FrameP.Content = new PageCheckk();
         }
 
         private void Checkk_Cl(object sender, RoutedEventArgs e)
         {
-
+            FrameP.Content = new PageCheckk();
         }
 
         private void Checkk_Histori_Cl(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Client_Click(object sender, RoutedEventArgs e)
-        {
-
+            FrameP.Content = new PageCheckkHistori();
         }
     }
 }

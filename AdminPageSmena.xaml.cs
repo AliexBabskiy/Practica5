@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,19 +32,19 @@ namespace PePract5
             Smena o = new Smena();
             if (text1.Text == "" || Convert.ToInt32(text1.Text) < 0)
             {
-                Eror.Text = "Невозможно добавить: \nОтсутствует количество смен\nили их отрицательное количество";
+                Eror.Text = "Невозможно добавить: \nОтсутствует количество смен\nили количество некорректно";
                 return;
             }
-            else
+            else if (Information.IsNumeric(text1.Text))
             {
                 o.Smens = Convert.ToInt32(text1.Text);
             }
             if (text2.Text == "" || Convert.ToInt32(text2.Text) < 0)
             {
-                Eror.Text = "Невозможно добавить: \nОтсутствуют часы смен\nили они отрицательные";
+                Eror.Text = "Невозможно добавить: \nОтсутствуют часы смен\nили они некорректны";
                 return;
             }
-            else
+            else if (Information.IsNumeric(text2.Text))
             {
                 o.Hourr = Convert.ToInt32(text2.Text);
             }
@@ -60,19 +61,19 @@ namespace PePract5
 
                 if (text1.Text == "" || Convert.ToInt32(text1.Text) < 0)
                 {
-                    Eror.Text = "Невозможно изменить: \nОтсутствует количество смен\nили их отрицательное количество";
+                    Eror.Text = "Невозможно изменить: \nОтсутствует количество смен\nили их количество некорректно";
                     return;
                 }
-                else
+                else if (Information.IsNumeric(text1.Text))
                 {
                     selected.Smens = Convert.ToInt32(text1.Text);
                 }
                 if (text2.Text == "" || Convert.ToInt32(text2.Text) < 0)
                 {
-                    Eror.Text = "Невозможно изменить: \nОтсутствуют часы смен\nили они отрицательные";
+                    Eror.Text = "Невозможно изменить: \nОтсутствуют часы смен\nили они некорректны";
                     return;
                 }
-                else
+                else if (Information.IsNumeric(text2.Text))
                 {
                     selected.Hourr = Convert.ToInt32(text2.Text);
                 }

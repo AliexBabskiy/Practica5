@@ -44,3 +44,7 @@ C:\Users\Александр\source\repos\PePract5\PePract5\obj\Debug\PageKorzina
 C:\Users\Александр\source\repos\PePract5\PePract5\obj\Debug\PageKorzina.baml
 C:\Users\Александр\source\repos\PePract5\PePract5\obj\Debug\WindowKassa.g.cs
 C:\Users\Александр\source\repos\PePract5\PePract5\obj\Debug\WindowKassa.baml
+C:\Users\Александр\source\repos\PePract5\PePract5\obj\Debug\PageCheckk.g.cs
+C:\Users\Александр\source\repos\PePract5\PePract5\obj\Debug\PageCheckkHistori.g.cs
+C:\Users\Александр\source\repos\PePract5\PePract5\obj\Debug\PageCheckk.baml
+C:\Users\Александр\source\repos\PePract5\PePract5\obj\Debug\PageCheckkHistori.baml

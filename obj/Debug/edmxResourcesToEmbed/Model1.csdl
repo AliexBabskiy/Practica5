@@ -5,7 +5,7 @@
       <PropertyRef Name="ID_Checkk" />
     </Key>
     <Property Name="ID_Checkk" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Date_of_purchase" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date_of_purchase" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Summ_Check" Type="Int32" Nullable="false" />
     <Property Name="Vneseno" Type="Int32" Nullable="false" />
     <Property Name="Sdacha" Type="Int32" />
@@ -22,7 +22,7 @@
     </Key>
     <Property Name="ID_Client" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="NumberPhone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="NumberPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Checkk" Relationship="Self.FK__Checkk__Client_I__5535A963" FromRole="Client" ToRole="Checkk" />
   </EntityType>
   <EntityType Name="DanVxod">

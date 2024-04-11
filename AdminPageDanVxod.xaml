@@ -26,7 +26,6 @@
         <DataGrid Name="tablic" IsReadOnly="True" Grid.RowSpan="6" SelectionChanged="tablic_Dob" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Loggin}" Header="Логин"/>
-                <DataGridTextColumn Binding="{Binding Passwd}" Header="Пароль"/>
                 <DataGridTextColumn Binding="{Binding Rol.Roll}" Header="Роль"/>
             </DataGrid.Columns>
         </DataGrid>

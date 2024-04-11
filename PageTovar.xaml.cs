@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,18 +40,22 @@ namespace PePract5
                 o.NameTovar = Convert.ToString(text1.Text);
             }
 
-            if (text2.Text != "" && Convert.ToInt32(text2.Text) > 0)
+            if (text2.Text != "" && (Information.IsNumeric(text2.Text) & Convert.ToInt32(text2.Text) > 0))
             {
                 o.Price = Convert.ToInt32(text2.Text);
             }
             else
             {
-                Eror.Text = "Невозможно добавить товар: \nОтсутствует цена или она отрицательная";
+                Eror.Text = "Невозможно добавить товар: \nНекорректная цена или она отрицательная";
                 return;
             }
             if (text3.Text == "")
             {
                 o.Kolichestvo = null;
+            }
+            else if (Information.IsNumeric(text3.Text))
+            {
+                o.Kolichestvo = Convert.ToInt32(text3.Text);
             }
             else if (Convert.ToInt32(text3.Text) < 0)
             {
@@ -59,7 +64,8 @@ namespace PePract5
             }
             else
             {
-                o.Kolichestvo = Convert.ToInt32(text3.Text);
+                Eror.Text = "Невозможно добавить товар: \nНеверное количество количество";
+                return;
             }
 
             try
@@ -88,18 +94,23 @@ namespace PePract5
                 {
                     selected.NameTovar = Convert.ToString(text1.Text);
                 }
-                if (text2.Text != "" && Convert.ToInt32(text2.Text) > 0)
+
+                if (text2.Text != "" && (Information.IsNumeric(text2.Text) & Convert.ToInt32(text2.Text) > 0))
                 {
                     selected.Price = Convert.ToInt32(text2.Text);
                 }
                 else
                 {
-                    Eror.Text = "Невозможно изменить товар: \nОтсутствует цена или она отрицательная";
+                    Eror.Text = "Невозможно изменить товар: \nНекорректная цена или она отрицательная";
                     return;
                 }
                 if (text3.Text == "")
                 {
                     selected.Kolichestvo = null;
+                }
+                else if (Information.IsNumeric(text3.Text))
+                {
+                    selected.Kolichestvo = Convert.ToInt32(text3.Text);
                 }
                 else if (Convert.ToInt32(text3.Text) < 0)
                 {
@@ -108,7 +119,8 @@ namespace PePract5
                 }
                 else
                 {
-                    selected.Kolichestvo = Convert.ToInt32(text3.Text);
+                    Eror.Text = "Невозможно изменить товар: \nНеверное количество";
+                    return;
                 }
 
                 try

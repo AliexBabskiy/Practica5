@@ -10,6 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -27,6 +28,8 @@
         <Button x:Name="BtEMPDolz" Content="Должности сотрудников" Grid.Column="4" Click="EMPDolz"/>
         <Button x:Name="BtSmena" Content="Смены" Grid.Column="5" Click="Smena"/>
 
-        <Frame x:Name="FrameP" Grid.Row="1" Grid.ColumnSpan="6" NavigationUIVisibility="Hidden" Grid.RowSpan="5"/>
+        <Frame x:Name="FrameP" Grid.Row="1" Grid.ColumnSpan="6" NavigationUIVisibility="Hidden"/>
+
+        <Button x:Name="BtBecap" Grid.Row="2" Grid.ColumnSpan="6" Content="Бекап" Click="Becap_Cl"/>
     </Grid>
 </Window>
